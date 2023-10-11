@@ -10,21 +10,15 @@ import java.util.UUID;
 @Entity
 @Data
 @Builder
-@Table(name = "USER")
-public class UserEntity {
+@Table(name = "GIFTCODE")
+public class GiftCodeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
-    @Column(name = "email", unique = true, nullable = false)
-    private String email;
-
-    @Column(name = "password", nullable = false)
-    private String password;
-
-    @Column(name = "role_name")
-    private String roleName;
+    @Column(name = "code", unique = true)
+    private String code;
 
     @Column(name = "del_flg")
     private Integer delFlg;
