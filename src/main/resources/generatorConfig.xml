@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <properties resource="application.properties"/>
+    <classPathEntry location="${mbg.jdbc.driver-location}"/>
+    <context id="xmlmapper.mysql" defaultModelType="hierarchical" targetRuntime="MyBatis3">
+
+        <property name="javaFileEncoding" value="UTF-8"/>
+
+        <plugin type="org.mybatis.generator.plugins.MapperAnnotationPlugin"/>
+
+        <commentGenerator>
+            <property name="suppressDate" value="true"/>
+        </commentGenerator>
+
+        <jdbcConnection driverClass="${mbg.jdbc.driver-class-name}"
+                        connectionURL="${mbg.jdbc.url}"
+                        userId="${mbg.jdbc.username}"
+                        password="${mbg.jdbc.password}">
+        </jdbcConnection>
+
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+
+        <javaModelGenerator targetProject="${mbg.target-project.java}"
+                            targetPackage="${mbg.target-package.model}">
+            <property name="enableSubPackages" value="false"/>
+            <property name="trimStrings" value="false"/>
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetProject="${mbg.target-project.resources}"
+                         targetPackage="${mbg.target-package.mapper}">
+            <property name="enableSubPackages" value="false"/>
+        </sqlMapGenerator>
+
+        <javaClientGenerator type="XMLMAPPER"
+                             targetProject="${mbg.target-project.java}"
+                             targetPackage="${mbg.target-package.mapper}">
+            <property name="enableSubPackages" value="false"/>
+        </javaClientGenerator>
+
+        <table tableName="usr" modelType="hierarchical">
+            <property name="useActualColumnNames" value="false"/>
+        </table>
+        <table tableName="role_usr" modelType="hierarchical">
+            <property name="useActualColumnNames" value="false"/>
+        </table>
+        <table tableName="customer" modelType="hierarchical">
+            <property name="useActualColumnNames" value="false"/>
+        </table>
+        <table tableName="product" modelType="hierarchical">
+            <property name="useActualColumnNames" value="false"/>
+        </table>
+        <table tableName="gift_code" modelType="hierarchical">
+            <property name="useActualColumnNames" value="false"/>
+        </table>
+        <table tableName="cart" modelType="hierarchical">
+            <property name="useActualColumnNames" value="false"/>
+        </table>
+        <table tableName="order_product" modelType="hierarchical">
+            <property name="useActualColumnNames" value="false"/>
+        </table>
+        <table tableName="invoice" modelType="hierarchical">
+            <property name="useActualColumnNames" value="false"/>
+        </table>
+        <table tableName="payment" modelType="hierarchical">
+            <property name="useActualColumnNames" value="false"/>
+        </table>
+    </context>
+
+</generatorConfiguration>
